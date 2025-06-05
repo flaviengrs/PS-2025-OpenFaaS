@@ -1,0 +1,10 @@
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+
+functions:
+  file-transformer:
+    lang: python3-http
+    handler: ./file-transformer
+    image: flaviengrs/file-transformer:latest
+    topics: "orders.import"
